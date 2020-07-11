@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Button from '@material-ui/core/Button';
 import './App.css';
 
 const PLACES = [
@@ -56,16 +57,29 @@ class App extends Component {
     return (
       <div className="App">
         {PLACES.map((place, index) => (
-          <button
+          <Button 
+            variant="contained" 
+            color="primary" 
             key={index}
             onClick={() => {
               this.setState({ activePlace: index });
             }}
           >
             {place.name}
-          </button>
+          </Button>
         ))}
         <WeatherDisplay key={activePlace} zip={PLACES[activePlace].zip} />
+
+
+        <BottomNavigation value={value} onChange={handleChange} className={classes.root}>
+  <BottomNavigationAction label="Recents" value="recents" icon={<RestoreIcon />} />
+  <BottomNavigationAction label="Favorites" value="favorites" icon={<FavoriteIcon />} />
+  <BottomNavigationAction label="Nearby" value="nearby" icon={<LocationOnIcon />} />
+  <BottomNavigationAction label="Folder" value="folder" icon={<FolderIcon />} />
+</BottomNavigation>
+
+
+
       </div>
     );
   }
