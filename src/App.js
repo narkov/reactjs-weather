@@ -1,5 +1,11 @@
 import React, { Component } from 'react';
 import Button from '@material-ui/core/Button';
+import BottomNavigation from '@material-ui/core/BottomNavigation';
+import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
+// import FolderIcon from '@material-ui/core/material-ui-icons.folder';
+// import RestoreIcon from '@material-ui/core/material-ui-icons.restore';
+// import FavoriteIcon from '@material-ui/core/material-ui-icons.favorite';
+// import LocationOnIcon from '@material-ui/core/material-ui-icons.location-on';
 import './App.css';
 
 const PLACES = [
@@ -71,12 +77,12 @@ class App extends Component {
         <WeatherDisplay key={activePlace} zip={PLACES[activePlace].zip} />
 
 
-        <BottomNavigation value={value} onChange={handleChange} className={classes.root}>
+{/* <BottomNavigation >
   <BottomNavigationAction label="Recents" value="recents" icon={<RestoreIcon />} />
   <BottomNavigationAction label="Favorites" value="favorites" icon={<FavoriteIcon />} />
   <BottomNavigationAction label="Nearby" value="nearby" icon={<LocationOnIcon />} />
   <BottomNavigationAction label="Folder" value="folder" icon={<FolderIcon />} />
-</BottomNavigation>
+</BottomNavigation> */}
 
 
 
@@ -84,5 +90,5 @@ class App extends Component {
     );
   }
 }
-
+// value={value} onChange={handleChange} className={classes.root}
 export default App;
